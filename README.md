@@ -43,13 +43,14 @@ Python 3.12+ is needed only for the optional Python tools.
 
 1. Start the MySQL service.
 2. Open `database/schema.sql` in MySQL Workbench.
-3. Review the script and execute it to create the `blood\_bank\_db` database, tables, indexes, and demo data.
+3. Review the script and execute it to create the `blood\\\_bank\\\_db` database, tables, indexes, and demo data.
 4. Configure the application with the username and password for your own MySQL installation.
 
 Set these environment variables in PowerShell before starting the application:
 
 &#x20;   $env:DB\_USERNAME = "your\_mysql\_username"
-    $env:DB\_PASSWORD = "your\_mysql\_password"
+$env:DB\_PASSWORD = "your\_mysql\_password"
+
 
 
 Replace the example values with your actual MySQL credentials. Do not publish database passwords or API keys.
@@ -63,9 +64,11 @@ Start with Maven:
 &#x20;   mvn spring-boot:run
 
 
+
 Alternatively, build the executable JAR:
 
 &#x20;   mvn -DskipTests package
+
 
 
 Then run it:
@@ -73,11 +76,13 @@ Then run it:
 &#x20;   java -jar target/blood-bank-system-1.0.0.jar
 
 
-Set `DB\_USERNAME` and `DB\_PASSWORD` in the same PowerShell session before starting either option.
+
+Set `DB\\\_USERNAME` and `DB\\\_PASSWORD` in the same PowerShell session before starting either option.
 
 Open the application at:
 
 &#x20;   http://localhost:8080
+
 
 
 Keep the terminal running while using the application. Press Ctrl+C in that terminal to stop it.
@@ -87,15 +92,17 @@ Keep the terminal running while using the application. Press Ctrl+C in that term
 From the `python-tools` directory:
 
 &#x20;   python -m venv .venv
-    .venv\\Scripts\\activate
-    pip install -r requirements.txt
-    python generate\_sample\_data.py
-    python demand\_analysis.py
+.venv\\Scripts\\activate
+pip install -r requirements.txt
+python generate\_sample\_data.py
+python demand\_analysis.py
+
 
 
 The optional forecast script is:
 
 &#x20;   python demand\_forecast.py
+
 
 
 These tools are separate from the main Spring Boot application.
@@ -107,31 +114,30 @@ This is an educational demonstration with no login system. It is not intended fo
 Compatibility rules are simplified. Actual transfusion decisions require appropriate testing, crossmatching, established blood-bank protocols, and qualified medical professionals.
 
 
-## Screenshots
 
+## \## Screenshots
 
+## 
 
-\### Dashboard
+## \### Dashboard
 
+## 
 
+## !\[BloodCare Dashboard](Screenshots/Dashboard.png)
 
-!\[BloodCare Dashboard](screenshots/Dashboard.png)
+## 
 
+## \### Donor Management
 
+## 
 
-\### Donor Management
+## !\[BloodCare Donor Management](Screenshots/Donor.png)
 
+## 
 
+## \### Analytics
 
-!\[BloodCare Donor Management](screenshots/Donor.png)
+## 
 
-
-
-\### Analytics
-
-
-
-!\[BloodCare Analytics](screenshots/Analytics.png)
-
-
+## !\[BloodCare Analytics](Screenshots/Analytics.png)
 
