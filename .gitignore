@@ -1,0 +1,25 @@
+target/
+.idea/
+.vscode/
+*.iml
+.env
+.DS_Store
+__pycache__/
+*.pyc
+data/generated/
+logs/
+# Local Google Maps API configuration
+src/main/resources/static/map-config.js
+# Local development and backup files
+*.bak
+*.bak-*
+ADD_ABOUT_FEATURE.py
+ADD_GPS_FEATURE.py
+PROJECT_OVERVIEW.zip
+build_result.txt
+
+# Local configuration backups
+*.pre-git-backup
+
+# Temporary JavaScript backups
+*.bak*

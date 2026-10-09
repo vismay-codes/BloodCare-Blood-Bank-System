@@ -1,0 +1,41 @@
+BLOOD BANK DONOR MATCHING & STOCK EXPIRY SYSTEM
+================================================
+
+Project level: Medium / Fresher+ / Interview-friendly
+
+Core stack:
+Java 26
+Spring Boot 4.1.1
+Spring JDBC / JdbcTemplate
+MySQL 8.x
+REST APIs
+HTML5 + CSS3 + Vanilla JavaScript
+Python 3.12+
+Optional scikit-learn
+
+Architecture:
+Browser UI -> Spring Boot REST API -> Service layer -> JdbcTemplate -> MySQL
+Python analytics is a separate companion tool and does not block the web application.
+
+DSA:
+PriorityQueue ranks CRITICAL > URGENT > NORMAL requests.
+Donor candidates are ranked by city and donation history.
+
+Business rules:
+- Red-cell compatibility map.
+- Donor cannot be suggested unless 90 days have passed since last donation.
+- Stock is preferred before donor suggestions.
+- Available stock is ordered by earliest expiry.
+- Expired units are automatically marked EXPIRED when the API is used.
+- Expiry dashboard defaults to the next 3 days.
+
+AI/ML:
+Optional Python LinearRegression forecast of monthly requested units.
+It is intentionally simple enough for a fresher to explain honestly.
+
+UI:
+- Responsive dark glassmorphism interface.
+- Local SVG blood-network hero artwork.
+- CSS glow, depth and 3D-style cards.
+- Dashboard, donors, requests, stock and analytics views.
+- Built-in rule-based assistant with no API key.

@@ -1,0 +1,288 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>BloodCare - Smart Blood Bank</title>
+  <link rel="stylesheet" href="/styles.css"/>
+</head>
+<body>
+<div class="bg-grid"></div>
+<header class="topbar">
+  <a class="brand" href="#"><span class="brand-mark" aria-hidden="true"></span><span>Blood<span>Care</span></span></a>
+  <nav>
+    <button class="nav active" data-view="dashboard">Dashboard</button>
+    <button class="nav" data-view="donors">Donors</button>
+    <button class="nav" data-view="requests">Requests</button>
+    <button class="nav" data-view="stock">Stock</button>
+    <button class="nav" data-view="analytics">Analytics</button>
+    <button class="nav" data-view="about">About</button>
+    <button class="nav" data-view="nearby">Near Me</button>
+  </nav>
+  <div class="live"><i></i> System Live</div>
+</header>
+
+<main>
+<section id="dashboard" class="view active">
+  <div class="hero">
+    <div>
+      <div class="eyebrow">SMART BLOOD OPERATIONS</div>
+      <h1>Every unit matters.<br/><em>Every second counts.</em></h1>
+      <p>Donor matching, emergency prioritization and expiry intelligence in one friendly workspace.</p>
+      <div class="hero-actions">
+        <button class="primary" onclick="openRequest()">+ Emergency request</button>
+        <button class="secondary" onclick="showView('donors')">Find a donor -></button>
+      </div>
+    </div>
+    <div class="hero-art"><img src="/assets/blood-network.svg" alt="BloodCare network illustration"/><div class="art-badge">24/7<br/><small>Care network</small></div></div>
+  </div>
+
+  <div class="stats" id="stats"></div>
+
+  <div class="two-col">
+    <div class="panel">
+      <div class="panel-head"><div><span class="eyebrow">LIVE QUEUE</span><h2>Emergency requests</h2></div><button class="text-btn" onclick="showView('requests')">View all -></button></div>
+      <div id="queuePreview" class="queue"></div>
+    </div>
+    <div class="panel expiry-panel">
+      <div class="panel-head"><div><span class="eyebrow">STOCK WATCH</span><h2>Expiring within 3 days</h2></div><span class="pill danger">Action needed</span></div>
+      <div id="expiryPreview"></div>
+    </div>
+  </div>
+</section>
+
+<section id="donors" class="view">
+  <div class="section-title"><div><span class="eyebrow">DONOR NETWORK</span><h1>Find the right donor</h1><p>Search by blood group and city. Eligibility automatically respects the 90-day rule.</p></div><button class="primary" onclick="openDonor()">+ Register donor</button></div>
+  <div class="filterbar">
+    <select id="donorGroup"><option value="">All blood groups</option><option>O-</option><option>O+</option><option>A-</option><option>A+</option><option>B-</option><option>B+</option><option>AB-</option><option>AB+</option></select>
+    <input id="donorCity" placeholder="City e.g. Nagpur"/>
+    <button class="primary small" onclick="loadDonors(1)">Search</button>
+  </div>
+  <div class="panel"><div id="donorTable"></div><div class="pager" id="donorPager"></div></div>
+</section>
+
+<section id="requests" class="view">
+  <div class="section-title"><div><span class="eyebrow">PRIORITY ENGINE</span><h1>Blood requests</h1><p>Critical requests rise to the top through a Java PriorityQueue.</p></div><button class="primary" onclick="openRequest()">+ New request</button></div>
+  <div class="panel"><div id="requestTable"></div></div>
+</section>
+
+<section id="stock" class="view">
+  <div class="section-title"><div><span class="eyebrow">INVENTORY</span><h1>Blood stock</h1><p>FIFO-style expiry visibility keeps valuable units from being wasted.</p></div><button class="primary" onclick="openStock()">+ Add stock</button></div>
+  <div class="blood-grid" id="stockGrid"></div>
+  <div class="panel"><div class="panel-head"><h2>Expiry watch</h2><span class="pill danger">Next 3 days</span></div><div id="expiryTable"></div></div>
+</section>
+
+<section id="analytics" class="view">
+  <div class="section-title"><div><span class="eyebrow">DATA INTELLIGENCE</span><h1>Operational analytics</h1><p>SQL-powered insights for demand, fulfilment, cities and waste.</p></div></div>
+  <div id="analyticsSummary" class="stats-grid"></div>
+<div class="analytics-grid" id="analyticsGrid"></div>
+</section>
+
+<section id="about" class="view">
+  <div class="section-title">
+    <div>
+      <span class="eyebrow">ABOUT BLOODCARE</span>
+      <h1>Smart coordination for every critical drop.</h1>
+      <p>BloodCare brings donor matching, blood inventory, emergency prioritization and expiry monitoring into one connected workspace.</p>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="panel">
+      <div class="panel-head">
+        <div>
+          <span class="eyebrow">OUR MISSION</span>
+          <h2>Why BloodCare?</h2>
+        </div>
+      </div>
+      <p>BloodCare is designed to make blood-bank operations easier to monitor by connecting donor discovery, blood stock visibility and emergency request handling in one workspace.</p>
+      <div class="queue">
+        <div class="queue-item"><div class="queue-main"><b>Faster donor discovery</b><small>Search by blood group and city while respecting donor eligibility.</small></div></div>
+        <div class="queue-item"><div class="queue-main"><b>Smarter stock visibility</b><small>Track available units and identify stock approaching expiry.</small></div></div>
+        <div class="queue-item"><div class="queue-main"><b>Priority-driven response</b><small>Critical and urgent requests rise through the priority engine.</small></div></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">
+        <div>
+          <span class="eyebrow">HOW IT WORKS</span>
+          <h2>From request to fulfilment</h2>
+        </div>
+      </div>
+      <div class="queue">
+        <div class="queue-item"><i class="priority critical"></i><div class="queue-main"><b>1. Create a request</b><small>Enter blood group, units, hospital and urgency.</small></div></div>
+        <div class="queue-item"><i class="priority"></i><div class="queue-main"><b>2. Check compatible stock</b><small>Available blood units are checked first.</small></div></div>
+        <div class="queue-item"><i class="priority"></i><div class="queue-main"><b>3. Match eligible donors</b><small>Compatibility, city and the 90-day rule are considered.</small></div></div>
+        <div class="queue-item"><i class="priority"></i><div class="queue-main"><b>4. Fulfil and track</b><small>Record the source and keep operations visible.</small></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="label">Donor Matching</div><div class="value">24/7</div><div class="hint">Network visibility</div></div>
+    <div class="stat"><div class="label">Expiry Watch</div><div class="value">3 Days</div><div class="hint">Early stock alert window</div></div>
+    <div class="stat"><div class="label">Priority Engine</div><div class="value">3 Levels</div><div class="hint">Critical / Urgent / Normal</div></div>
+    <div class="stat"><div class="label">Core Stack</div><div class="value">Java</div><div class="hint">Spring Boot + SQL + JDBC</div></div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-head">
+      <div>
+        <span class="eyebrow">CONTACT & INFORMATION</span>
+        <h2>BloodCare Network</h2>
+      </div>
+    </div>
+    <p>This project demonstrates donor matching, inventory monitoring, emergency prioritization, expiry alerts and operational analytics in one practical workflow.</p>
+    <div class="about-links">
+      <span>Emergency response</span>
+      <span>Donor network</span>
+      <span>Blood stock</span>
+      <span>Operational analytics</span>
+    </div>
+  </div>
+</section>
+
+
+    <section id="nearby" class="view">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">LOCATION & DISCOVERY</div>
+          <h2>BloodCare Near Me</h2>
+          <p>Use your device location to view your position on a live Google Maps view and quickly find nearby blood banks and hospitals.</p>
+        </div>
+      </div>
+
+     <div class="nearby-layout">
+
+  <div class="panel nearby-info">
+
+    <div class="nearby-icon">GPS</div>
+
+    <h3>Find Blood Support Nearby</h3>
+
+    <p class="muted">
+      Detect your current location and quickly find nearby blood banks,
+      hospitals, or directions using Google Maps.
+    </p>
+
+    <button
+      class="btn primary"
+      id="useLocationBtn"
+      type="button">
+      Use My Location
+    </button>
+
+    <div class="location-status map-status info" id="locationStatus">
+      Location not detected yet. Click <b>Use My Location</b>.
+    </div>
+
+    <div class="location-coords" id="mapCoords">
+      Location: -
+    </div>
+
+    <div class="nearby-actions map-actions">
+
+      <button
+        class="btn"
+        id="bloodBanksBtn"
+        type="button"
+        disabled>
+         Nearby Blood Banks
+      </button>
+
+      <button
+        class="btn"
+        id="hospitalsBtn"
+        type="button"
+        disabled>
+        Nearby Hospitals
+      </button>
+
+      <button
+        class="btn"
+        id="directionsBtn"
+        type="button"
+        disabled>
+        ­ Get Directions
+      </button>
+
+    </div>
+
+  </div>
+
+  <div class="panel map-card">
+
+    <div class="map-title-row">
+
+      <div>
+        <strong>Live Map</strong>
+        <span>Google Maps</span>
+      </div>
+
+      <span class="map-live-dot">
+        Ready Ready
+      </span>
+
+    </div>
+
+    <div id="bloodCareGoogleMap"></div>
+
+  </div>
+
+</div>
+    </section>
+
+</main>
+
+<button class="assistant-fab" onclick="toggleAssistant()">AI</button>
+<div class="assistant" id="assistant">
+  <div class="assistant-head">AI BloodCare Assistant <button onclick="toggleAssistant()">x</button></div>
+  <div class="assistant-body" id="chat"><div class="bot">Hi! Ask me about blood compatibility, the 90-day donor rule, expiry alerts, or how fulfilment works.</div></div>
+  <div class="assistant-input"><input id="chatInput" placeholder="Ask a question..." onkeydown="if(event.key==='Enter')chat()"/><button onclick="chat()">-></button></div>
+</div>
+
+<div class="modal" id="modal"><div class="modal-card"><button class="close" onclick="closeModal()">x</button><div id="modalContent"></div></div></div>
+<div id="toast"></div>
+<script src="/app.js"></script>
+
+<footer class="site-footer">
+  <div><b>BloodCare</b><span>Smart Blood Network</span></div>
+  <div>Donor matching  -  Stock intelligence  -  Emergency response</div>
+  <div>About  -  How It Works  -  Contact</div>
+</footer>
+
+<script src="/map-config.js"></script>
+<script src="/google-maps.js"></script>
+
+<script>
+(function () {
+    const key = window.BLOODCARE_GOOGLE_MAPS_KEY;
+
+    if (!key || key === "PASTE_YOUR_GOOGLE_MAPS_API_KEY_HERE") {
+        console.error("BloodCare Google Maps API key is missing.");
+        return;
+    }
+
+    const script = document.createElement("script");
+
+    script.src =
+    "https://maps.googleapis.com/maps/api/js" +
+    "?key=" + encodeURIComponent(key) +
+    "&loading=async" +
+    "&callback=initBloodCareMaps";
+
+    script.async = true;
+    script.defer = true;
+
+    document.head.appendChild(script);
+})();
+</script>
+
+</body>
+</html>
+
+
+
+
+

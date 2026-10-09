@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+:root{--bg:#080b13;--panel:#101521;--panel2:#141a28;--line:#252d3d;--text:#f7f8fb;--muted:#8d97aa;--red:#ff4962;--red2:#ff7184;--green:#46d39a;--amber:#ffbd55;--blue:#67a7ff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 75% 10%,#301522 0,#0b0e17 30%,#080b13 70%);color:var(--text);font-family:"DM Sans",sans-serif;min-height:100vh}.bg-grid{position:fixed;inset:0;pointer-events:none;opacity:.16;background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);background-size:45px 45px;mask-image:linear-gradient(to bottom,black,transparent 80%)}.topbar{height:76px;border-bottom:1px solid #ffffff0c;background:#090c14cc;backdrop-filter:blur(20px);display:flex;align-items:center;padding:0 5vw;gap:40px;position:sticky;top:0;z-index:20}.brand{display:flex;align-items:center;gap:10px;font:700 22px "Space Grotesk";color:#fff;text-decoration:none}.brand span span{color:var(--red)}.brand-drop{width:35px;height:35px;border-radius:12px 12px 16px 16px;background:linear-gradient(145deg,#ff7a8a,#d92645);display:grid;place-items:center;box-shadow:0 8px 30px #ff496244}.topbar nav{display:flex;gap:6px;flex:1}.nav{background:transparent;border:0;color:var(--muted);padding:10px 15px;border-radius:10px;cursor:pointer;font-weight:600}.nav:hover,.nav.active{background:#ffffff0a;color:#fff}.live{font-size:12px;color:#a9b2c2}.live i{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green);margin-right:6px}main{max-width:1250px;margin:auto;padding:38px 24px 80px}.view{display:none}.view.active{display:block}.hero{min-height:370px;border:1px solid #ffffff0b;border-radius:30px;padding:55px;display:flex;overflow:hidden;position:relative;background:linear-gradient(120deg,#141824dd,#10131fe8);box-shadow:0 30px 90px #0006}.eyebrow{font:700 10px "Space Grotesk";letter-spacing:2px;color:var(--red2)}h1,h2{font-family:"Space Grotesk",sans-serif;margin:8px 0}.hero h1{font-size:50px;line-height:1.05;letter-spacing:-2px}.hero h1 em{font-style:normal;color:var(--red2)}.hero p,.section-title p{color:var(--muted);max-width:580px;line-height:1.7}.hero-actions{display:flex;gap:10px;margin-top:28px}.primary,.secondary{border:0;border-radius:12px;padding:13px 18px;font-weight:700;cursor:pointer}.primary{background:linear-gradient(135deg,var(--red),#d82948);color:#fff;box-shadow:0 10px 30px #ff496226}.primary.small{padding:10px 16px}.secondary{background:#ffffff0a;color:#fff;border:1px solid #ffffff10}.hero-art{margin-left:auto;width:370px;position:relative;display:flex;align-items:center;justify-content:center}.hero-art img{width:100%;height:auto;filter:drop-shadow(0 25px 50px #ff496225)}.art-badge{position:absolute;right:18px;bottom:22px;background:#0b101add;border:1px solid #ffffff15;border-radius:14px;padding:10px 16px;text-align:center;font:700 18px "Space Grotesk";box-shadow:0 12px 35px #0008}.art-badge small{font:500 10px "DM Sans";color:var(--muted)}.orb{position:absolute;border-radius:50%;filter:blur(1px)}.orb1{width:260px;height:260px;right:10px;top:10px;background:radial-gradient(circle,#ff496244,transparent 67%)}.orb2{width:160px;height:160px;right:110px;bottom:20px;background:radial-gradient(circle,#6b9cff2d,transparent 67%)}.blood-vessel{position:absolute;right:55px;top:55px;width:210px;height:250px;border:1px solid #ffffff14;border-radius:50% 50% 45% 45%;transform:rotate(7deg);display:flex;align-items:center;justify-content:center;flex-direction:column;background:#ffffff04;box-shadow:inset 0 0 60px #ff49620b,0 0 80px #ff49620c}.drop{font-size:75px;color:var(--red);filter:drop-shadow(0 12px 25px #ff496255);animation:pulse 2.4s infinite}.blood-vessel span{font:700 27px "Space Grotesk"}.blood-vessel small{color:var(--muted)}@keyframes pulse{50%{transform:scale(1.08)}}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:18px 0}.stat,.panel{background:linear-gradient(145deg,#111622e8,#0e131ee8);border:1px solid #ffffff0a;border-radius:18px}.stat{padding:20px}.stat .label{color:var(--muted);font-size:12px}.stat .value{font:700 29px "Space Grotesk";margin:9px 0}.stat .hint{font-size:11px;color:var(--green)}.two-col{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}.panel{padding:22px}.panel-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}.panel-head h2{font-size:19px}.text-btn{background:none;border:0;color:var(--red2);cursor:pointer}.queue-item{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid #ffffff08}.priority{width:9px;height:40px;border-radius:8px;background:var(--amber)}.priority.critical{background:var(--red);box-shadow:0 0 15px #ff496266}.queue-main{flex:1}.queue-main b{display:block}.queue-main small{color:var(--muted)}.badge,.pill{font-size:10px;font-weight:700;border-radius:30px;padding:6px 9px;background:#ffffff0b;color:#b9c2d0}.pill.danger{background:#ff496215;color:#ff7889}.pill.ok{background:#46d39a15;color:#5be2a9}.expiry-row{padding:14px 0;border-bottom:1px solid #ffffff08;display:flex;justify-content:space-between}.expiry-row b{display:block}.expiry-row small{color:var(--muted)}.section-title{display:flex;justify-content:space-between;align-items:end;margin:15px 0 26px}.section-title h1{font-size:37px}.filterbar{display:flex;gap:10px;margin-bottom:16px}.filterbar input,.filterbar select,.modal input,.modal select{background:#0b101a;border:1px solid #2a3344;color:#fff;border-radius:10px;padding:12px 13px;outline:none}.filterbar input{flex:1}.table{width:100%;border-collapse:collapse}.table th,.table td{text-align:left;padding:13px 10px;border-bottom:1px solid #ffffff08;font-size:13px}.table th{font-size:10px;color:#778195;letter-spacing:1px;text-transform:uppercase}.group{font-weight:800;color:#ff7080}.available{color:var(--green)}.unavailable{color:var(--muted)}.action{border:1px solid #ffffff10;background:#ffffff06;color:#fff;padding:7px 10px;border-radius:8px;cursor:pointer}.pager{display:flex;justify-content:flex-end;gap:6px;padding-top:14px}.pager button{background:#ffffff08;border:1px solid #ffffff08;color:#fff;padding:7px 11px;border-radius:7px;cursor:pointer}.blood-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:10px;margin-bottom:18px}.blood-card{padding:15px 8px;text-align:center;border-radius:15px;background:#ffffff05;border:1px solid #ffffff08}.blood-card .group{font-size:18px}.blood-card b{display:block;font-size:20px;margin-top:5px}.stats-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:18px 0}.stats-grid .stat{min-width:0}.stats-grid .value{overflow-wrap:anywhere}@media(max-width:900px){.stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}.analytics-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.chart-card{padding:22px;background:#101520;border:1px solid #ffffff0a;border-radius:18px}.bar{display:flex;align-items:center;gap:10px;margin:12px 0}.bar label{width:65px;color:#aab3c2;font-size:12px}.bar i{height:10px;border-radius:20px;background:linear-gradient(90deg,var(--red),#ff9b9f);display:block}.bar span{font-size:11px;color:#9ba5b7}.modal{position:fixed;inset:0;background:#000b;backdrop-filter:blur(8px);display:none;place-items:center;z-index:50;padding:20px}.modal.show{display:grid}.modal-card{width:min(520px,100%);background:#111722;border:1px solid #ffffff14;border-radius:20px;padding:28px;position:relative;box-shadow:0 30px 100px #000}.close{position:absolute;right:15px;top:13px;background:none;border:0;color:#9da6b7;font-size:25px;cursor:pointer}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.form-grid .full{grid-column:1/-1}.form-grid label{font-size:11px;color:#8f99ab;display:block;margin:4px 0 6px}.form-grid input,.form-grid select{width:100%}.assistant-fab{position:fixed;right:25px;bottom:25px;width:55px;height:55px;border-radius:50%;border:0;background:linear-gradient(135deg,var(--red),#a71839);color:#fff;font-size:23px;box-shadow:0 15px 40px #ff496255;z-index:25;cursor:pointer}.assistant{position:fixed;right:25px;bottom:92px;width:340px;background:#101621;border:1px solid #ffffff12;border-radius:18px;display:none;z-index:30;box-shadow:0 25px 70px #000}.assistant.show{display:block}.assistant-head{padding:15px;border-bottom:1px solid #ffffff0c;font-weight:700}.assistant-head button{float:right;background:none;border:0;color:#aaa;font-size:18px}.assistant-body{height:250px;overflow:auto;padding:14px}.bot,.user{padding:10px 12px;border-radius:12px;margin:7px 0;font-size:12px;line-height:1.5}.bot{background:#ffffff08}.user{background:#ff496218;margin-left:40px}.assistant-input{display:flex;padding:10px;border-top:1px solid #ffffff0c}.assistant-input input{flex:1;background:none;border:0;color:#fff;outline:0;padding:8px}.assistant-input button{background:var(--red);color:#fff;border:0;border-radius:8px;width:35px}.empty{padding:30px;text-align:center;color:var(--muted)}#toast{position:fixed;left:50%;bottom:25px;transform:translateX(-50%) translateY(20px);opacity:0;background:#f7f8fb;color:#111;padding:12px 18px;border-radius:10px;z-index:80;font-weight:700;transition:.25s}#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}@media(max-width:900px){.topbar{gap:10px;padding:0 15px}.topbar nav{overflow:auto}.hero{padding:32px}.hero-art{display:none}.hero h1{font-size:39px}.stats{grid-template-columns:1fr 1fr}.two-col,.analytics-grid{grid-template-columns:1fr}.blood-grid{grid-template-columns:repeat(4,1fr)}}@media(max-width:600px){.live{display:none}.stats{grid-template-columns:1fr 1fr}.section-title{align-items:start;gap:15px;flex-direction:column}.filterbar{flex-wrap:wrap}.filterbar input{min-width:150px}.table{font-size:11px}.panel{overflow:auto}.assistant{width:calc(100% - 30px);right:15px}.hero{padding:25px}.form-grid{grid-template-columns:1fr}}
+
+.site-footer{
+  width:min(1180px,calc(100% - 40px));
+  margin:48px auto 28px;
+  padding:22px 24px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px 28px;
+  align-items:center;
+  justify-content:space-between;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:18px;
+  background:rgba(255,255,255,.03);
+  color:rgba(255,255,255,.70);
+}
+.site-footer div{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.site-footer b{color:#fff;font-size:1rem}
+.site-footer span{opacity:.65}
+.about-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.about-links span{padding:8px 12px;border:1px solid rgba(255,255,255,.08);border-radius:999px;background:rgba(255,255,255,.03);font-size:.82rem}
+
+/* BloodCare Near Me */
+.nearby-layout{display:grid;grid-template-columns:minmax(280px,360px) 1fr;gap:20px;align-items:stretch}
+.nearby-info{padding:26px;display:flex;flex-direction:column;justify-content:center}
+.nearby-icon{width:48px;height:48px;display:grid;place-items:center;border-radius:14px;background:rgba(255,73,98,.12);border:1px solid rgba(255,73,98,.25);color:var(--red2);font-size:1.5rem;margin-bottom:16px}
+.nearby-info h3{margin:0 0 10px;font-family:'Space Grotesk',sans-serif}
+.nearby-info .muted{color:var(--muted);line-height:1.65;font-size:.92rem}
+.location-status{margin-top:16px;padding:12px 14px;border:1px solid rgba(255,255,255,.08);border-radius:12px;background:rgba(255,255,255,.03);color:rgba(255,255,255,.78);line-height:1.5;font-size:.86rem}
+.location-coords{margin-top:10px;color:var(--muted);font-family:monospace;font-size:.78rem;word-break:break-all}
+.nearby-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.nearby-actions .btn{text-decoration:none}
+.map-card{padding:0;overflow:hidden;min-height:480px}
+.map-title-row{height:58px;padding:0 18px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.08)}
+.map-title-row div{display:flex;align-items:center;gap:10px}
+.map-title-row span:not(.map-live-dot){color:var(--muted);font-size:.78rem}
+.map-live-dot{color:var(--green);font-size:.76rem}
+
+/* Fixed Google Map Rendering */
+#bloodCareGoogleMap {
+    display: block;
+    width: 100%;
+    height: 420px;
+    border: 0;
+    background: #0b1019;
+}
+
+
+
+@media (max-width: 850px) {
+
+    .nearby-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .map-card {
+        min-height: 420px;
+    }
+
+    #bloodCareGoogleMap {
+        height: 360px !important;
+        min-height: 360px !important;
+    }
+}
+/* =========================================================
+   BLOODCARE BRANDING
+   ========================================================= */
+
+.brand-mark{
+    position:relative;
+    width:36px;
+    height:36px;
+    display:block;
+    border-radius:11px;
+    background:linear-gradient(145deg,rgba(255,73,98,.24),rgba(255,73,98,.08));
+    border:1px solid rgba(255,73,98,.35);
+    box-shadow:0 8px 24px rgba(255,73,98,.12);
+    transition:transform .2s ease,box-shadow .2s ease;
+}
+
+.brand-mark::before{
+    content:"";
+    position:absolute;
+    width:14px;
+    height:19px;
+    left:10px;
+    top:7px;
+    background:var(--red2);
+    border-radius:52% 48% 58% 42%;
+    transform:rotate(45deg);
+    box-shadow:0 4px 12px rgba(255,73,98,.28);
+}
+
+.brand-mark::after{
+    content:"";
+    position:absolute;
+    width:7px;
+    height:3px;
+    left:14px;
+    top:17px;
+    background:#fff;
+    border-radius:3px;
+    transform:rotate(-45deg);
+    opacity:.9;
+}
+
+.brand:hover .brand-mark{
+    transform:translateY(-2px) scale(1.04);
+    box-shadow:0 10px 28px rgba(255,73,98,.22);
+}
+
+.brand{
+    gap:10px;
+}
+
+
+
+/* Preserved Google Maps styling */
+/* =========================================================
+   BLOODCARE GOOGLE MAPS
+   ========================================================= */
+
+#bloodCareGoogleMap {
+    width: 100%;
+    height: 430px;
+    min-height: 320px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #111827;
+}
+
+.map-status {
+    margin-top: 12px;
+    padding: 11px 14px;
+    border-radius: 12px;
+    font-size: 0.88rem;
+    line-height: 1.45;
+    border: 1px solid rgba(255,255,255,.08);
+    background: rgba(255,255,255,.03);
+}
+
+.map-status.info {
+    color: var(--muted);
+}
+
+.map-status.success {
+    color: var(--green);
+}
+
+.map-status.warning {
+    color: var(--amber);
+}
+
+.map-status.error {
+    color: var(--red2);
+}
+
+#mapCoords {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 0.82rem;
+}
+
+.map-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.map-actions button {
+    transition:
+        transform .18s ease,
+        opacity .18s ease,
+        box-shadow .18s ease;
+}
+
+.map-actions button:hover:not(:disabled) {
+    transform: translateY(-2px);
+}
+
+.map-actions button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.map-actions button:disabled {
+    opacity: .45;
+    cursor: not-allowed;
+}
+
+#useLocationBtn {
+    position: relative;
+    overflow: hidden;
+}
+
+#useLocationBtn:disabled::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.12),
+        transparent
+    );
+    animation: bloodCareButtonLoading 1.2s infinite;
+}
+
+@keyframes bloodCareButtonLoading {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
+}
+
+@media (max-width: 700px) {
+    #bloodCareGoogleMap {
+    display: block;
+    width: 100%;
+    height: 430px !important;
+    min-height: 430px !important;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #111827;
+}
+
+    .map-actions {
+        flex-direction: column;
+    }
+
+    .map-actions button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    #bloodCareGoogleMap {
+        height: 300px !important;
+        min-height: 300px !important;
+    }
+}
+
+/* =========================================================
+   BLOODCARE GOOGLE MAP - FINAL
+   ========================================================= */
+
+#bloodCareGoogleMap {
+    display: block;
+    width: 100%;
+    height: 430px !important;
+    min-height: 430px !important;
+    border-radius: 0;
+    overflow: hidden;
+    background: #111827;
+}
+
+#bloodCareGoogleMap > div {
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 850px) {
+    #bloodCareGoogleMap {
+        height: 360px !important;
+        min-height: 360px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    #bloodCareGoogleMap {
+        height: 300px !important;
+        min-height: 300px !important;
+    }
+}
+
+/* =========================================================
+   BLOODCARE GOOGLE MAPS - DEFINITIVE LAYOUT FIX
+   ========================================================= */
+
+.nearby-layout {
+    display: grid !important;
+    grid-template-columns: minmax(280px, 360px) minmax(0, 1fr) !important;
+    gap: 20px !important;
+    align-items: stretch !important;
+    min-height: 480px !important;
+}
+
+.map-card {
+    display: block !important;
+    position: relative !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 480px !important;
+    min-height: 480px !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+}
+
+.map-title-row {
+    height: 58px !important;
+    min-height: 58px !important;
+    box-sizing: border-box !important;
+}
+
+#bloodCareGoogleMap {
+    display: block !important;
+    position: relative !important;
+    width: 100% !important;
+    height: 422px !important;
+    min-height: 422px !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+    background: #111827 !important;
+}
+
+#bloodCareGoogleMap > div {
+    display: block !important;
+    position: relative !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 100% !important;
+}
+
+#bloodCareGoogleMap .gm-style {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+@media (max-width: 850px) {
+
+    .nearby-layout {
+        grid-template-columns: 1fr !important;
+        min-height: auto !important;
+    }
+
+    .map-card {
+        height: 420px !important;
+        min-height: 420px !important;
+    }
+
+    #bloodCareGoogleMap {
+        height: 362px !important;
+        min-height: 362px !important;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .map-card {
+        height: 360px !important;
+        min-height: 360px !important;
+    }
+
+    #bloodCareGoogleMap {
+        height: 302px !important;
+        min-height: 302px !important;
+    }
+}

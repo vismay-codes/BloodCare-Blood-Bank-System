@@ -1,0 +1,21 @@
+REQUIRED BEFORE FIRST RUN
+=========================
+
+1. JDK 26 (IMPORTANT)
+   The project is finalized for Java 26 because current stable Spring Boot 4.1.1 officially supports Java through 26.
+   Your Java 27 can remain installed, but use JDK 26 for this project to stay on a supported production release line.
+
+2. MySQL 8.x
+   MySQL Server must be installed and running.
+   MySQL Workbench is optional.
+
+3. Apache Maven 3.9+ for command-line running.
+   If IntelliJ IDEA is used, its Maven integration can be used instead.
+
+4. Python 3.12+ is recommended for the optional data/ML tools.
+   Python is NOT required to start the Java web application.
+
+5. Modern web browser.
+
+NOT REQUIRED:
+Node.js, npm, Docker, Redis, JWT, JPA/Hibernate, a separate frontend server.
